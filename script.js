@@ -8,13 +8,12 @@ document.getElementById("submit-btn").addEventListener("click", function() {
             const { capital = "N/A", population, region, flags, borders = [] } = country;
             const firstCapital = Array.isArray(capital) ? capital[0] : capital;
             
-
             document.getElementById("country-description").innerHTML = `
-                <strong>Capital:</strong>  ${firstCapital}<br>
+                <strong>Capital:</strong> ${firstCapital} <br>
                 <strong>Population:</strong> ${population.toLocaleString()} <br>
                 <strong>Region:</strong> ${region} <br>
-                <strong>Flag:</strong> <img src="${flags.png}" alt="Flag" style="width: 150px;">
-            `;
+                <strong>Flag:</strong> <img src="${flags.png}" alt="Flag" style="width: 150px;">`;
+            
 
             const borderList = document.getElementById("bordering-list");
             if (borders.length > 0) {
