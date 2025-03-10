@@ -1,16 +1,16 @@
 document.getElementById("submit-btn").addEventListener("click", function() {
     const countryName = document.getElementById("country").value.trim();
 
-    if (!countryName) return alert("Enter a country name");
-
     fetch(`https://restcountries.com/v3.1/name/${countryName}`)
         .then(response => response.json())
         .then(data => {
             const country = data[0];
             const { capital = "N/A", population, region, flags, borders = [] } = country;
+            const firstCapital = Array.isArray(capital) ? capital[0] : capital;
+            
 
             document.getElementById("country-description").innerHTML = `
-                <strong>Capital:</strong> ${capital} <br>
+                <strong>Capital:</strong>  ${firstCapital}<br>
                 <strong>Population:</strong> ${population.toLocaleString()} <br>
                 <strong>Region:</strong> ${region} <br>
                 <strong>Flag:</strong> <img src="${flags.png}" alt="Flag" style="width: 150px;">
