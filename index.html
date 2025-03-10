@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Country Information</h1>
+
+    <div>
+        <label for="country-name">Country Name:</label>
+        <input type="text" id="country" placeholder="Country Name">
+        <button id="submit-btn">Fetch Information</button>
+    </div>
+
+    <section id="country-info">
+        <h2>Country Information:</h2>
+        <p id="country-description">Enter a country name.</p>
+        <h2>Bordering Countries:</h2>
+        <ul id="bordering-list">
+        </ul>
+    </section>
+
+    <section id="error-message" style="display:none;">
+        <h2>Error:</h2>
+        <p id="error-text">An error has occured.</p>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
